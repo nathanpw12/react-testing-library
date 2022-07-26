@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 import App from '../App';
 import renderWithRouter from '../helpers/renderWithRouter';
 
-describe('Teste o componente <App.js />', () => {
+describe('Testa o componente <App.js />', () => {
   it('O primeiro link deve possuir o texto "Home"', () => {
     renderWithRouter(<App />);
     const expectedHome = 'Home';
