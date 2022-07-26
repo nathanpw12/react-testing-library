@@ -3,7 +3,7 @@ import React from 'react';
 import renderWithRouter from '../helpers/renderWithRouter';
 import App from '../App';
 
-describe('Teste o componente <Pokedex.js />', () => {
+describe('Testa o componente <Pokedex.js />', () => {
   it('Teste se a página contém um heading h2 com o texto "Encountered pokémons"', () => {
     renderWithRouter(<App />);
     const text = /Encountered pokémons/i;
@@ -27,6 +27,8 @@ describe('Teste o componente <Pokedex.js />', () => {
 
   it('Verirfica se o botão existe', () => {
     renderWithRouter(<App />);
+    const card = screen.getByRole('button', { name: /fire/i });
+    fireEvent.click(card);
     const pokemonLink = screen.getAllByTestId('pokemon-type-button');
     expect(pokemonLink).toBeDefined();
   });
